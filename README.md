@@ -1,1 +1,1 @@
-This Repo will contain my solution to the problem of DSA from GFG
+This Repo will contain my solutions to the problems of DSA from GFG
