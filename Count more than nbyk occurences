@@ -1,1 +1,44 @@
 Given an array arr of size N and an element k. The task is to find the count of elements in the array that appear more than n/k times.
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {0, 2, 1, 2, 0, 3, 1, 2};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    cout << "Enter value of K: ";
+    int k;
+    cin >> k;
+    int res = (n / k);
+
+    // Sort the array
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    int count = 1;
+    for (int i = 1; i < n; i++) {
+        // If the current element is the same as the previous one
+        if (arr[i] == arr[i - 1]) {
+            count++;
+        } else {
+            // If the count is greater than the threshold
+            if (count > res) {
+                cout << arr[i - 1] << " ";
+            }
+            count = 1; // Reset count
+        }
+    }
+
+    // Check for the last element
+    if (count > res) {
+        cout << arr[n - 1];
+    }
+
+    return 0;
+}
