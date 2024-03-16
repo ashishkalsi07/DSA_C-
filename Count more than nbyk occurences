@@ -3,7 +3,7 @@ Given an array arr of size N and an element k. The task is to find the count of 
 using namespace std;
 
 int main() {
-    int arr[] = {0, 2, 1, 2, 0, 3, 1, 2};
+    int arr[] = {0, 2, 1, 2, 0, 3, 1, 8};
     int n = sizeof(arr) / sizeof(arr[0]);
     cout << "Enter value of K: ";
     int k;
